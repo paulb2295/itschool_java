@@ -13,14 +13,12 @@ public class PathFindingInMaze {
         char[][] charMatrix = stringToCharMatrix();
         printMatrix(charMatrix);
 
-        ArrayList<Node> nodes = Nodes(charMatrix);
+        ArrayList<Node> nodes = getConnectedNodes(charMatrix);
 
         Graph graph = new Graph(graphNodesNumber(charMatrix));
         createGraphEdges(getGraphEdges(nodes), graph);
 
         printResolvedMaze(findStartingNode(nodes), findEndNode(nodes), charMatrix, graph, nodes);
-
-
     }
 
 
@@ -119,7 +117,7 @@ public class PathFindingInMaze {
         }
     }
 
-    public static ArrayList Nodes(char[][] charMatrix) {
+    public static ArrayList getConnectedNodes(char[][] charMatrix) {
         ArrayList<Node> nodes = new ArrayList<>();
         for (int lineIndex = 0; lineIndex < charMatrix.length; lineIndex++) {
             for (int rowIndex = 0; rowIndex < charMatrix.length; rowIndex++) {
