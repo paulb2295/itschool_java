@@ -7,10 +7,6 @@ import java.util.Comparator;
 
 public class Scheduler {
 
-    public static final int DAYS = 0;
-    public static final int HOURS = 1;
-    public static final int MINUTES = 2;
-    public static final int SECONDS = 3;
 
     private ArrayList<Event> events = new ArrayList<>();
 
